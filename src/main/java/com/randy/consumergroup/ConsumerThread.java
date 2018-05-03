@@ -41,8 +41,10 @@ public class ConsumerThread implements Runnable {
         while (true){
             ConsumerRecords<String,String> consumerRecords = kafkaConsumer.poll(100);
             for(ConsumerRecord<String,String> item : consumerRecords){
-                System.out.println("Consumer Message:"+item.value()+",Partition:"+item.partition()+"Offset:"+item.offset());
+                System.out.println(Thread.currentThread().getName() + "Consumer Message:"+item.value()+",Partition:"+item.partition()+"Offset:"+item.offset());
             }
         }
     }
+    
+    
 }

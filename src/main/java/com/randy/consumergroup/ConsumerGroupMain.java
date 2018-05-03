@@ -10,10 +10,10 @@ import com.randy.ProducerThread;
 public class ConsumerGroupMain {
 
     public static void main(String[] args){
-        String brokers = "Server2:9092";
+        String brokers = "39.105.8.31:9091";
         String groupId = "group01";
         String topic = "HelloWorld";
-        int consumerNumber = 3;
+        int consumerNumber = 1;
 
         Thread producerThread = new Thread(new ProducerThread(brokers,topic));
         producerThread.start();
